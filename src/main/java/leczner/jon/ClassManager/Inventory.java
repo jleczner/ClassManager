@@ -12,8 +12,12 @@ public class Inventory {
         inventory = new HashMap<>();
     }
 
+    public HashMap<Integer, Product> getInventory() {
+        return inventory;
+    }
+
     public void add(Product p) {
-        return;
+        inventory.put(p.getId(), p);
     }
 
     public void remove(Product p) {

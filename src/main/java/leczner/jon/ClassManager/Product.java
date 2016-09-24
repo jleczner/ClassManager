@@ -5,11 +5,15 @@ package leczner.jon.ClassManager;
  */
 public class Product {
     private double price;
+    private static int idCounter;
     private int id;
     private int onHand;
 
-    public Product() {
-
+    public Product(double price) {
+        this.price = price;
+        this.id = idCounter;
+        idCounter++;
+        onHand = 0;
     }
 
     public double getPrice() {
@@ -29,6 +33,6 @@ public class Product {
     }
 
     public void addStock(int amount) {
-        return;
+        onHand += amount;
     }
 }
