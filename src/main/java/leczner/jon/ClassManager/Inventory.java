@@ -1,5 +1,6 @@
 package leczner.jon.ClassManager;
 
+import java.util.Collection;
 import java.util.HashMap;
 
 /**
@@ -21,10 +22,15 @@ public class Inventory {
     }
 
     public void remove(Product p) {
-        return;
+        inventory.remove(p.getId());
     }
 
     public double calculateTotal() {
-        return 0;
+        double total = 0;
+        Collection<Product> products = inventory.values();
+        for (Product p : products) {
+            total += p.getOnHand() * p.getPrice();
+        }
+        return total;
     }
 }
